@@ -1,62 +1,28 @@
-/* ===================================================================
-    
-    Author          : Valid Theme
-    Template Name   : Antux - Personal Portfolio Template
-    Version         : 1.0
-    
-* ================================================================= */
 (function($) {
 	"use strict";
-
 	$(document).ready(function() {
-
-
-		/* ==================================================
-		    # Tooltip Init
-		===============================================*/
 		$('[data-toggle="tooltip"]').tooltip();
-
-
-		/* ==================================================
-		    # Youtube Video Init
-		 ===============================================*/
 		$('.player').mb_YTPlayer();
-
-
-		/* ==================================================
-		    # Wow Init
-		 ===============================================*/
 		var wow = new WOW({
-			boxClass: 'wow', // animated element css class (default is wow)
-			animateClass: 'animated', // animation css class (default is animated)
-			offset: 0, // distance to the element when triggering the animation (default is 0)
-			mobile: true, // trigger animations on mobile devices (default is true)
-			live: true // act on asynchronously loaded content (default is true)
+			boxClass: 'wow',
+			animateClass: 'animated',
+			offset: 0,
+			mobile: true,
+			live: true
 		});
 		wow.init();
-
-
-		/* ==================================================
-		    # imagesLoaded active
-		===============================================*/
 		$('#gallery-masonary,.blog-masonry').imagesLoaded(function() {
-
-			/* Filter menu */
 			$('.mix-item-menu').on('click', 'button', function() {
 				var filterValue = $(this).attr('data-filter');
 				$grid.isotope({
 					filter: filterValue
 				});
 			});
-
-			/* filter menu active class  */
 			$('.mix-item-menu button').on('click', function(event) {
 				$(this).siblings('.active').removeClass('active');
 				$(this).addClass('active');
 				event.preventDefault();
 			});
-
-			/* Filter active */
 			var $grid = $('#gallery-masonary').isotope({
 				itemSelector: '.gallery-item',
 				percentPosition: true,
@@ -64,8 +30,6 @@
 					columnWidth: '.gallery-item',
 				}
 			});
-
-			/* Filter active */
 			$('.blog-masonry').isotope({
 				itemSelector: '.blog-item',
 				percentPosition: true,
@@ -73,26 +37,16 @@
 					columnWidth: '.blog-item',
 				}
 			});
-
 		});
-
-
-		/* ==================================================
-		    # Magnific popup init
-		 ===============================================*/
 		$(".popup-link").magnificPopup({
 			type: 'image',
-			// other options
 		});
-
 		$(".popup-gallery").magnificPopup({
 			type: 'image',
 			gallery: {
 				enabled: true
 			},
-			// other options
 		});
-
 		$(".popup-youtube, .popup-vimeo, .popup-gmaps").magnificPopup({
 			type: "iframe",
 			mainClass: "mfp-fade",
@@ -100,11 +54,9 @@
 			preloader: false,
 			fixedContentPos: false
 		});
-
 		$('.magnific-mix-gallery').each(function() {
 			var $container = $(this);
 			var $imageLinks = $container.find('.item');
-
 			var items = [];
 			$imageLinks.each(function() {
 				var $item = $(this);
@@ -119,7 +71,6 @@
 				magItem.title = $item.data('title');
 				items.push(magItem);
 			});
-
 			$imageLinks.magnificPopup({
 				mainClass: 'mfp-fade',
 				items: items,
@@ -139,57 +90,30 @@
 				}
 			});
 		});
-
-
-		/* ==================================================
-		    # Fun Factor Init
-		===============================================*/
 		$('.timer').countTo();
 		$('.fun-fact').appear(function() {
 			$('.timer').countTo();
 		}, {
 			accY: -100
 		});
-
-
 		$(".service-style-one-item").hover(function() {
 			$(this).addClass('active').parent().siblings().find('.service-style-one-item').removeClass('active');
 		});
-
-
-		/* ==================================================
-            # Testimonials Carousel
-         ===============================================*/
 		 const testimonialOneCarousel = new Swiper(".testimonial-style-one-carousel", {
-			// Optional parameters
 			direction: "horizontal",
 			loop: true,
 			autoplay: true,
-			// If we need pagination
 			pagination: {
 				el: '.swiper-pagination',
 				type: 'bullets',
 				clickable: true,
 			},
-
-			// Navigation arrows
 			navigation: {
 				nextEl: ".swiper-button-next",
 				prevEl: ".swiper-button-prev"
 			}
-
-			// And if we need scrollbar
-			/*scrollbar: {
-            el: '.swiper-scrollbar',
-          },*/
 		});
-
-
-		/* ==================================================
-            # Project Details Carousel
-         ===============================================*/
 		 const projectDetailsCarousel = new Swiper(".project-details-carousel", {
-			// Optional parameters
 			loop: true,
 			freeMode: true,
 			grabCursor: true,
@@ -209,23 +133,14 @@
 				},
 			},
 		});
-
-
-		/* ==================================================
-		    Splite Text
-		================================================== */
-
 		let ofsetHeight = document.querySelector(".services-style-one-items");
 		if (ofsetHeight) {
 			ScrollTrigger.matchMedia({
 				"(min-width: 992px)": function() {
-
 					let pbmitpanels = gsap.utils.toArray(".services-style-one-item");
 					const spacer = 0;
-
 					let pbmitheight = pbmitpanels[0].offsetHeight + 120;
 					pbmitpanels.forEach((pbmitpanel, i) => {
-						//This is for padding between item
 						TweenMax.set(pbmitpanel, {
 							top: i * 0
 						});
@@ -238,7 +153,6 @@
 								invalidateOnRefresh: true
 							},
 							ease: "none",
-							//This is for scaling outsite 
 							scale: () => 1 - (pbmitpanels.length - i) * 0.035
 						});
 						ScrollTrigger.create({
@@ -256,17 +170,11 @@
 				}
 			});
 		}
-		
-		/* ==================================================
-		    GSAP Element Scroll Animation
-		================================================== */
-
 		let upDown_Scroll = document.querySelector(".upDownScrol");
 		if (upDown_Scroll) {
 			gsap.set(".upDownScrol", {
 				yPercent: 80
 			});
-
 			gsap.to(".upDownScrol", {
 				yPercent: -80,
 				ease: "none",
@@ -277,11 +185,6 @@
 				},
 			});
 		}
-
-
-		/* ==================================================
-		    Scroll To Top
-		================================================== */
 		function scrollToTop() {
 			var $scrollUp = $("#scrollUp"),
 			  $lastScrollTop = 0,
@@ -298,52 +201,40 @@
 			});
 		}
 		scrollToTop();
-
-
-		/* ==================================================
-		    Contact Form Validations
-		================================================== */
-		$('.contact-form').each(function() {
-			var formInstance = $(this);
-			formInstance.submit(function() {
-
-				var action = $(this).attr('action');
-
-				$("#message").slideUp(750, function() {
-					$('#message').hide();
-
-					$('#submit')
-						.after('<img src="assets/img/ajax-loader.gif" class="loader" />')
-						.attr('disabled', 'disabled');
-
-					$.post(action, {
-							name: $('#name').val(),
-							email: $('#email').val(),
-							phone: $('#phone').val(),
-							comments: $('#comments').val()
-						},
-						function(data) {
-							document.getElementById('message').innerHTML = data;
-							$('#message').slideDown('slow');
-							$('.contact-form img.loader').fadeOut('slow', function() {
-								$(this).remove()
-							});
-							$('#submit').removeAttr('disabled');
-						}
-					);
-				});
-				return false;
-			});
+		$('#contact-form').on('submit', function(e) {
+			e.preventDefault();
+			var name = $('#name').val().trim();
+			var email = $('#email').val().trim();
+			var phone = $('#phone').val().trim();
+			var comments = $('#comments').val().trim();
+			var $message = $('#message');
+			if (!name || !email || !comments) {
+				$message.html('<div class="alert-msg error">Please fill in name, email, and message.</div>').slideDown();
+				return;
+			}
+			var subject = encodeURIComponent('Portfolio Contact from ' + name);
+			var body = encodeURIComponent(
+				'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + (phone || 'N/A') + '\n\nMessage:\n' + comments
+			);
+			window.location.href = 'mailto:attaatariq@gmail.com?subject=' + subject + '&body=' + body;
+			$message.html('<div class="alert-msg success">Your email client should open shortly. If not, please email attaatariq@gmail.com directly.</div>').slideDown();
 		});
-
-
-	}); // end document ready function
-
-
+		$('a[href^="#"]').on('click', function(e) {
+			var href = this.getAttribute('href');
+			if (href.length <= 1) return;
+			var target = $(href);
+			if (target.length) {
+				e.preventDefault();
+				$('html, body').animate({ scrollTop: target.offset().top - 80 }, 600);
+				$('.side').removeClass('on');
+				$('.overlay-screen').removeClass('opened');
+			}
+		});
+		$('.simple-menu-list a[href^="#"]').on('click', function() {
+			$('.close-side').trigger('click');
+		});
+	});
 	$(window).scroll(function() {
-		/* ==================================================
-		    Background Zoom Init
-		================================================== */
 		let background_Zoom = document.querySelector("#js-hero");
 		if (background_Zoom) {
 			var scroll = $(window).scrollTop();
@@ -352,16 +243,10 @@
 			})
 		}
 	});
-
-
-	/* ==================================================
-		Preloader JS
-	================================================== */
 	const svg = document.getElementById("preloaderSvg");
 	const tl = gsap.timeline();
 	const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
 	const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
-
 	tl.to(".preloader-heading .load-text , .preloader-heading .cont", {
 		delay: 1.5,
 		y: -100,
@@ -383,8 +268,4 @@
 		zIndex: -1,
 		display: "none",
 	});
-
-
-
-
-})(jQuery); // End jQuery
+})(jQuery);

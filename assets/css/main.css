@@ -1,0 +1,48 @@
+/* Atta Ullah Tariq — Portfolio Custom Styles */
+.attr-nav li.theme-toggle-item a#theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0!important;border-radius:50%;border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.85);color:var(--color-heading,#232323);font-size:16px;text-transform:none;transition:background .25s,color .25s,border-color .25s}
+.attr-nav li.theme-toggle-item a#theme-toggle:hover,.bg-dark .attr-nav li.theme-toggle-item a#theme-toggle:hover{background:var(--color-primary,#ffb646);border-color:var(--color-primary,#ffb646);color:#fff}
+.bg-dark .attr-nav li.theme-toggle-item a#theme-toggle{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff}
+.attr-nav ul li.theme-toggle-item{margin-right:0}
+html.theme-dark-pending body.bg-fixed{background-image:url(assets/img/shape/3.jpg)!important;background-color:#1a1d22!important}
+html.theme-dark-pending body.bg-fixed::after{display:none}
+
+/* Portfolio filter */
+.portfolio-filter-nav{margin-bottom:10px}
+.portfolio-filter-nav .mix-item-menu{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:0;margin:0;list-style:none}
+.portfolio-filter-nav .mix-item-menu li{margin:0}
+.portfolio-filter-nav .mix-item-menu button{border:1px solid rgba(0,0,0,.1);background:transparent;color:var(--color-heading,#232323);padding:10px 22px;border-radius:50px;font-size:14px;font-weight:500;cursor:pointer;transition:all .3s ease;text-transform:uppercase;letter-spacing:.5px}
+.portfolio-filter-nav .mix-item-menu button.active,.portfolio-filter-nav .mix-item-menu button:hover{background:var(--color-primary,#ffb646);border-color:var(--color-primary,#ffb646);color:#fff}
+.bg-dark .portfolio-filter-nav .mix-item-menu button{border-color:rgba(255,255,255,.15);color:#fff}
+.bg-dark .portfolio-filter-nav .mix-item-menu button.active,.bg-dark .portfolio-filter-nav .mix-item-menu button:hover{background:var(--color-primary,#ffb646);border-color:var(--color-primary,#ffb646);color:#fff}
+
+/* Tech stack tags */
+.tech-stack-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding:20px 0}
+.tech-tag,.skills-tags-cloud span{display:inline-block;padding:10px 20px;border-radius:50px;font-size:13px;font-weight:500;background:rgba(255,182,70,.12);color:var(--color-heading,#232323);border:1px solid rgba(255,182,70,.25);transition:all .3s ease;cursor:default}
+.tech-tag:hover,.skills-tags-cloud span:hover{background:var(--color-primary,#ffb646);color:#fff;border-color:var(--color-primary,#ffb646);transform:translateY(-2px)}
+.bg-dark .tech-tag,.bg-dark .skills-tags-cloud span{background:rgba(255,255,255,.06);color:#ddd;border-color:rgba(255,255,255,.12)}
+.bg-dark .tech-tag:hover,.bg-dark .skills-tags-cloud span:hover{background:var(--color-primary,#ffb646);color:#fff;border-color:var(--color-primary,#ffb646)}
+
+/* Skills tags cloud */
+.skills-tags-cloud{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:10px 0}
+.skills-tags-cloud span{font-size:12px;padding:8px 16px}
+
+/* Project cards */
+.project-excerpt{font-size:14px;color:var(--color-paragraph,#666);margin:10px 0 15px;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.bg-dark .project-excerpt{color:#aaa}
+
+/* Impact stat counter */
+.stat-counter{font-size:48px!important;font-weight:700;color:var(--color-primary,#ffb646);line-height:1;margin:0}
+.customer-box .thumb:has(.stat-counter){display:flex;align-items:center;justify-content:center;min-width:80px;min-height:80px;border-radius:50%;background:rgba(255,182,70,.15)}
+
+/* Engagement / pricing icons */
+.pricing-header i.fas{font-size:36px;color:var(--color-primary,#ffb646);opacity:.8}
+
+/* About section extra paragraph spacing */
+.about-style-one-info>p+p{margin-top:15px}
+
+/* Smooth anchor offset for fixed navbar */
+section[id],div[id]{scroll-margin-top:100px}
+
+/* Contact form success message */
+.alert-msg.success{color:#28a745;background:rgba(40,167,69,.1);padding:15px;border-radius:8px;border:1px solid rgba(40,167,69,.2);font-size: 16px;}
+.alert-msg.error{color:#dc3545;background:rgba(220,53,69,.1);padding:15px;border-radius:8px;border:1px solid rgba(220,53,69,.2)}

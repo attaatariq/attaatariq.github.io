@@ -1,0 +1,2 @@
+/* Apply saved theme before paint to avoid flash */
+!function(){var e=document.cookie.match(/(?:^|;\s*)theme=([^;]*)/);e&&"dark"===e[1]&&document.documentElement.classList.add("theme-dark-pending")}();

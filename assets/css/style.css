@@ -3023,8 +3023,8 @@ ul.contact-info-style-one li:first-child {
 	position: relative;
 	display: flex;
 	align-items: center;
-	padding-top: 50px;
-	padding-bottom: 70px;
+	padding-top: 45px;
+	padding-bottom: 50px;
 }
 
 .brand-conetnt {
@@ -3035,7 +3035,8 @@ ul.contact-info-style-one li:first-child {
 }
 
 .brand-conetnt h2 {
-	font-size: 140px;
+	font-size: 50px;
+	width: 100%;
 	margin: 0 90px;
 	font-weight: 600;
 	line-height: 1;
@@ -3058,10 +3059,10 @@ ul.contact-info-style-one li:first-child {
 .brand-conetnt .item::after {
 	position: absolute;
 	right: -45px;
-	top: 50%;
+	top: 35%;
 	content: "";
-	height: 90px;
-	width: 90px;
+	height: 55px;
+	width: 55px;
 	background: url(../img/shape/3.png);
 	background-repeat: no-repeat;
 	background-position: right center;
@@ -3073,10 +3074,10 @@ ul.contact-info-style-one li:first-child {
 .brand-conetnt .item:nth-child(2n)::after {
 	position: absolute;
 	right: -45px;
-	top: 50%;
+	top: 35%;
 	content: "";
-	height: 90px;
-	width: 90px;
+	height: 55px;
+	width: 55px;
 	background: url(../img/shape/4.png);
 	background-repeat: no-repeat;
 	background-position: right center;
